@@ -1,0 +1,9 @@
+
+h2 
+  |Currently we have #{@groupsNo} group with #{@nInstances} instances in db
+
+- if @nInstances>0
+  ul
+    - @machines.each do |machine|
+      li 
+        | #{machine.mac_address} - status: #{machine.statuses.last.status} #{machine.statuses.last.date} -- last reboot: #{machine.last_reboot}
